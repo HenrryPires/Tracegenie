@@ -1,0 +1,28 @@
+var tables = document.getElementsByTagName('table');
+var data = [];
+
+for (var i = 0; i < tables.length; i++) { 
+	var addressArray = tables[i].rows[1].cells[0].innerText;
+	var address = addressArray.split('\n').filter(value => value != '' && !value.startsWith('Years at address')).reduce((current, newValue) => current + ' ' + newValue)
+
+	var entry = {name: tables[i].rows[0].cells[1].innerText.replace(/\s\s+/g, ' ').trim(), address: address};
+	data.push(entry);
+}
+
+
+POST https://tracegenie.com/amember4/amember/login
+amember_login: 11Spies
+amember_pass: @Search2
+
+
+
+GET /amember4/amember/1DAY/twnsearch.php?q52=Pires&q222=&q3222=&q322=Portsmouth&D99=2018vr&x=70&y=24 HTTP/1.1
+Host: www.tracegenie.com
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://www.tracegenie.com/amember4/amember/1DAY/searcharea.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-GB,en;q=0.9,pt-PT;q=0.8,pt;q=0.7,en-US;q=0.6,es;q=0.5
+Cookie: PHPSESSID=bcad2ae541b1a53cbf6eea7e95d3116b; amember_nr=c90f555d1cf161dada8260460d45d671
