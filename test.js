@@ -12,7 +12,7 @@ async function login(driver) {
     await driver.get('https://tracegenie.com/amember4/amember/login');
 
     await driver.findElement(webdriver.By.id('amember-login')).sendKeys('henrrypires@gmail.com');
-    await driver.findElement(webdriver.By.id('amember-pass')).sendKeys('Nelson.796\n');
+    await driver.findElement(webdriver.By.id('amember-pass')).sendKeys('Nelson796\n');
 
     await driver.wait(webdriver.until.elementLocated(webdriver.By.id('menu-member')), 2000);
 }
